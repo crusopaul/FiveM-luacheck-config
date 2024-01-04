@@ -4,7 +4,7 @@ A set of config files for using [luacheck](https://github.com/mpeterv/luacheck) 
 I created this with the intent of using it for lua resource validation using GitHub Actions, or another workflow equivalent. Feel free to copy & modify the config files for use in your projects.
 
 # Files
-All files include globals that are commonly used & provided by the FiveM lua environment. These were obtained through some of the repositories by [Cfx.re](https://github.com/citizenfx) such as [native](https://github.com/citizenfx/natives/).
+All files include globals that are commonly used & provided by the FiveM lua environment. These were obtained through some of the repositories by [Cfx.re](https://github.com/citizenfx) such as [natives](https://github.com/citizenfx/natives/).
 
 These files cannot make luacheck truly replicate the FiveM environment, and they do not attempt to do so, so be mindful that they are not aware of run order or global declarations across files. Additionally, FiveM's lua environment introduces features outside of the standard language like `joaat()` shorthand and the `+=` operator.
 
@@ -15,9 +15,9 @@ This config ignores all warnings provided by luacheck ([List of warnings](https:
 This config includes all warnings (except for 631 - *Line is too long.* as an example) but will likely cause action indications to show failures when warnings are encountered. Warnings are helpful and should be read, so there is utility to running this instead of the other version.
 
 # Output
-To illustrate, the output from using these config file with the example.lua should resemble the following:
+To illustrate, the output from using these config files with the example.lua should resemble the following:
 
-- Normal output
+- Control output
 ```
 > luacheck .
 Checking example.lua                              4 warnings
