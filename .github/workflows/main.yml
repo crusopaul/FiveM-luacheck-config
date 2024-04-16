@@ -1,0 +1,18 @@
+name: Luacheck Example
+on: [push, pull_request]
+jobs:
+  sile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Control output (should fail)
+        uses: lunarmodules/luacheck@v1
+      - name: Full output (should fail)
+        uses: lunarmodules/luacheck@v1
+        with:
+            args: . --config full.luacheck
+      - name: Errors only output (should pass)
+        uses: lunarmodules/luacheck@v1
+        with:
+            args: . --config errors.luacheck
