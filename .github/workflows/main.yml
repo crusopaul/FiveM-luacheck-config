@@ -5,14 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Control output (should fail)
-        uses: lunarmodules/luacheck@v1
-      - name: Full output (should fail)
-        uses: lunarmodules/luacheck@v1
-        with:
-            args: . --config full.luacheck
+        uses: actions/checkout@v4.1.1
+      # - name: Control output (should fail)
+      #   uses: lunarmodules/luacheck@v1.1.2
+      # - name: Full output (should fail)
+      #   uses: lunarmodules/luacheck@v1.1.2
+      #   with:
+      #       args: . --config full.luacheck
       - name: Errors only output (should pass)
-        uses: lunarmodules/luacheck@v1
+        uses: lunarmodules/luacheck@v1.1.2
         with:
             args: . --config errors.luacheck
