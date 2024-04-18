@@ -3,6 +3,8 @@ A set of config files for using [luacheck](https://github.com/mpeterv/luacheck) 
 
 I created this with the intent of using it for lua resource validation using GitHub Actions, or another workflow equivalent. Feel free to copy & modify the config files for use in your projects.
 
+This repository currently uses GitHub Actions to test the [example.lua](example.lua).
+
 # Installation and Use
 ## A Resource
 To install into a resource for use with either GitHub Actions or Bitbucket Pipelines, choose your the corresponding luacheck config file(s) for your needs and copy them into your project. Once you have the file(s) copied, you should be able to add a GitHub Action or Bitbucket Pipeline accordingly. See the [.github/workflows/main.yml](.github/workflows/main.yml) for GitHub or [bitbucket-pipelines.yml] for Bitbucket. Feel free to tweak these files according to your needs.
