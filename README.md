@@ -3,6 +3,29 @@ A set of config files for using [luacheck](https://github.com/mpeterv/luacheck) 
 
 I created this with the intent of using it for lua resource validation using GitHub Actions, or another workflow equivalent. Feel free to copy & modify the config files for use in your projects.
 
+This repository currently uses GitHub Actions to test the [example.lua](example.lua).
+
+# Installation and Use
+## A Resource
+To install into a resource for use with either GitHub Actions or Bitbucket Pipelines, choose your the corresponding luacheck config file(s) for your needs and copy them into your project. Once you have the file(s) copied, you should be able to add a GitHub Action or Bitbucket Pipeline accordingly. See the [.github/workflows/main.yml](.github/workflows/main.yml) for GitHub or [bitbucket-pipelines.yml](bitbucket-pipelines.yml) for Bitbucket. Feel free to tweak these files according to your needs.
+
+## A Server Deployment
+If you install these file(s) into a server deployment, you can benefit from testing your server's code in some way. To undertake this project, you will want to first copy the provided [.gitignore](.gitignore) and tweak it according to your needs - it currently ignores install files for a server, but you should probably not be running a repository from the same place as your server's deployment location. The currently ignored files are helpful for instantiating a repository for your server's deployment if you have not already.
+
+You will certainly want to edit your choice of file(s) to ignore escrowed scripts as they will fail to pass a luacheck. You will also want to ignore any scripts that fail to `joaat()` shorthand or the `+=` operator etc. I would recommend running luacheck locally until you can adequately tweak the copied file(s) below to pass a luacheck before you commit and push any workflow files.
+
+You can tweak the file(s) `include_files` to only include specific foldes for scanning:
+```
+"server/resources/[[]scan[]]/**/*.lua",
+```
+
+You can also tweak the file(s) `exclude_files` to exclude escrowed portions that happen to be include by the `include_files`:
+```
+"server/resources/[[]scan[]]/escrowed_script/**/*.lua",
+```
+
+Remember to consider the privacy setting of any repository you are operating in in regards to the files you commit source control and try to keep all secrets out of it - such as Discord ID's and .fxap files.
+
 # Files
 All files include globals that are commonly used & provided by the FiveM lua environment. These were obtained through some of the repositories by [Cfx.re](https://github.com/citizenfx) such as [natives](https://github.com/citizenfx/natives/).
 

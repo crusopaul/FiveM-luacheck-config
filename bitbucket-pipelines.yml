@@ -1,0 +1,30 @@
+pipelines:
+  default:
+    - step:
+        name: Error Scan
+        image: pipelinecomponents/luacheck
+        runs-on:
+          - self.hosted
+          - linux
+        script:
+          - luacheck . --config errors.luacheck
+  custom:
+    full_syntax_scan:
+      - step:
+          name: Error and Warning Scan
+          image: pipelinecomponents/luacheck
+          runs-on:
+            - self.hosted
+            - linux
+          script:
+            - luacheck . --config full.luacheck
+  pull-requests:
+    default:
+      - step:
+          name: Error Scan
+          image: pipelinecomponents/luacheck
+          runs-on:
+            - self.hosted
+            - linux
+          script:
+            - luacheck . --config errors.luacheck
