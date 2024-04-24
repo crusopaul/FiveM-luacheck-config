@@ -26,6 +26,9 @@ You can also tweak the file(s) `exclude_files` to exclude escrowed portions that
 
 Remember to consider the privacy setting of any repository you are operating in in regards to the files you commit source control and try to keep all secrets out of it - such as Discord ID's and .fxap files.
 
+## In Visual Studio
+If you use [Visual Studio Code](https://code.visualstudio.com/) or [VSCodium](https://vscodium.com/) for your lua development, you can install the [LuaCoderAssist](https://marketplace.visualstudio.com/items?itemName=liwangqian.luacoderassist) extension which will highlight reported errors. Once configured with this luacheck config, undefined global variables (and other issues) will become quite visible.
+
 # Files
 All files include globals that are commonly used & provided by the FiveM lua environment. These were obtained through some of the repositories by [Cfx.re](https://github.com/citizenfx) such as [natives](https://github.com/citizenfx/natives/).
 
